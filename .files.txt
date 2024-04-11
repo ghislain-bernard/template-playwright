@@ -1,0 +1,13 @@
+.gitignore
+.editorconfig
+.env
+.eslintrc
+.prettierrc
+.npmrc
+package.json
+server.js
+Makefile
+.drone.yml
+playwright.webp
+.files.txt
+README.md
