@@ -1,0 +1,15 @@
+{
+  "author": "Ghislain Bernard <ghislain.bernard@gmail.com>",
+  "dependencies": {
+    "eslint": "8.57.0",
+    "playwright": "1.43.0"
+  },
+  "description": "template",
+  "license": "MIT",
+  "name": "@gbernard/template-playright",
+  "scripts": {
+    "lint": "eslint --max-warnings=0 server.js",
+    "version": "echo $npm_package_version"
+  },
+  "version": "0.0.1"
+}
