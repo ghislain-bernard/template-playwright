@@ -1,0 +1,19 @@
+kind: pipeline
+type: docker
+
+steps:
+  - name: test
+    image: mcr.microsoft.com/playwright:v1.43.0-jammy
+    commands:
+      - pwd
+      - apt-get update
+      - DEBCONF_NOWARNINGS=yes apt-get --no-install-recommends --option=Dpkg::Use-Pty=0 install make
+      - node --version
+      - corepack pnpm --version
+      - '[ "$CI_REPO_REMOTE" ] && chown --recursive pwuser: .'
+      - su pwuser -c 'corepack pnpm install'
+      - su pwuser -c 'NODE_ENV=production corepack pnpm start'
+      - su pwuser -c 'corepack pnpm run-script version'
+      - su pwuser -c 'corepack pnpm run-script lint'
+      - su pwuser -c 'make clean'
+      - su pwuser -c 'rm --force --recursive .pnpm-store'
