@@ -1,6 +1,5 @@
 // ------------------------------------------- ghislain.bernard@gmail.com ------------------------------------------- //
 const globals = require('globals');
-//
 const stylistic = require('@stylistic/eslint-plugin-js');
 //
 module.exports = [
@@ -12,7 +11,6 @@ module.exports = [
   },
   {
     languageOptions: {
-      ecmaVersion: 2020,
       globals: { ...globals.node }
     },
     plugins: {
