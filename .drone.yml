@@ -3,7 +3,7 @@ type: docker
 
 steps:
   - name: test
-    image: mcr.microsoft.com/playwright:v1.43.0-jammy
+    image: mcr.microsoft.com/playwright:v1.49.1-jammy
     commands:
       - pwd
       - apt-get update
