@@ -3,17 +3,18 @@ type: docker
 
 steps:
   - name: test
-    image: mcr.microsoft.com/playwright:v1.49.1-jammy
+    image: mcr.microsoft.com/playwright:v1.50.1-noble
     commands:
       - pwd
       - apt-get update
       - DEBCONF_NOWARNINGS=yes apt-get --no-install-recommends --option=Dpkg::Use-Pty=0 install make
+      - npm install --global corepack@latest
       - node --version
       - corepack pnpm --version
-      - '[ "$CI_REPO_REMOTE" ] && chown --recursive pwuser: .'
-      - su pwuser -c 'corepack pnpm install'
-      - su pwuser -c 'NODE_ENV=production corepack pnpm start'
-      - su pwuser -c 'corepack pnpm run-script version'
-      - su pwuser -c 'corepack pnpm run-script lint'
-      - su pwuser -c 'make clean'
-      - su pwuser -c 'rm --force --recursive .pnpm-store'
+      - '[ "$CI_REPO_REMOTE" ] && chown --recursive ubuntu: .'
+      - su ubuntu -c 'corepack pnpm install'
+      - su ubuntu -c 'NODE_ENV=production corepack pnpm start'
+      - su ubuntu -c 'corepack pnpm run-script version'
+      - su ubuntu -c 'corepack pnpm run-script lint'
+      - su ubuntu -c 'make clean'
+      - su ubuntu -c 'rm --force --recursive .pnpm-store'
