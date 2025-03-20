@@ -1,14 +1,8 @@
 // ------------------------------------------- ghislain.bernard@gmail.com ------------------------------------------- //
-const globals = require('globals');
-const stylistic = require('@stylistic/eslint-plugin-js');
+import globals from 'globals';
+import stylistic from '@stylistic/eslint-plugin-js';
 //
-module.exports = [
-  {
-    files: ['server.js'],
-    languageOptions: {
-      sourceType: 'script'
-    }
-  },
+export default [
   {
     languageOptions: {
       globals: { ...globals.node }
