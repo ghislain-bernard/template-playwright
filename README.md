@@ -1,6 +1,6 @@
 ## template-playwright
 
-[![playwright.webp](playwright.webp)](https://playwright.dev) 
+[![playwright.webp](playwright.webp)](https://playwright.dev)
 
 ### usage
 
@@ -60,7 +60,7 @@ https://playwright.dev/assets/js/90f396e5.be25fc17.js
 https://playwright.dev/assets/js/1df93b7f.50a7fe1e.js
 https://playwright.dev/assets/js/68b9bced.7dc7168a.js
 
-$ identify capture.png 
+$ identify capture.png
 capture.png PNG 1024x3493 1024x3493+0+0 8-bit sRGB 474296B 0.000u 0:00.000
 
 $ corepack pnpm run-script lint
@@ -76,5 +76,5 @@ rm --force --recursive node_modules
 ...done
 ```
 
-> MIT License
+> MIT License  
 > ghislain.bernard@gmail.com
