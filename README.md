@@ -4,7 +4,7 @@
 
 ### usage
 
-```console
+```bash
 $ corepack pnpm run-script version
 
 > @gbernard/template-playright@0.0.1 version /home/user/git/template-playright
