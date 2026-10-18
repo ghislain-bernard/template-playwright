@@ -3,13 +3,14 @@ type: docker
 
 steps:
   - name: test
-    image: mcr.microsoft.com/playwright:v1.58.2-noble
+    image: mcr.microsoft.com/playwright:v1.64.1-noble
     commands:
       - pwd
       - apt-get update
       - DEBCONF_NOWARNINGS=yes apt-get --no-install-recommends --option=Dpkg::Use-Pty=0 install make
       - npm install --global corepack@latest
       - node --version
+      - corepack --version
       - corepack pnpm --version
       - '[ "$CI_REPO_REMOTE" ] && chown --recursive ubuntu: .'
       - su ubuntu -c 'corepack pnpm install'
